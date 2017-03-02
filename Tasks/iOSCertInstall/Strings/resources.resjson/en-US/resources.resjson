@@ -1,8 +1,10 @@
 {
-  "loc.friendlyName": "Apple Signing",
+  "loc.friendlyName": "Install iOS certificates",
   "loc.helpMarkDown": "",
-  "loc.description": "Install Apple certificates and provisioning profiles",
-  "loc.instanceNameFormat": "Install Apple certificates and provisioning profiles",
-  "loc.input.label.appleConnection": "Apple connection",
-  "loc.input.help.appleConnection": "Select the connection with the Apple certificate (.p12) and provisioning profile files."
+  "loc.description": "Install iOS certificates to the default keychain or a temporary keychain.",
+  "loc.instanceNameFormat": "Install iOS certificates matching $(certificate)",
+  "loc.input.label.certificate": "iOS Certificate (.p12)",
+  "loc.input.help.certificate": "Install the iOS certificates with name matching the specified value. By default the certificate will be installed into a temporary keychain accessible via the variable `IOS_TEMP_KEYCHAIN` during the build.",
+  "loc.input.label.password": "P12 Password",
+  "loc.input.help.password": "Password associated with your iOS certificate."
 }

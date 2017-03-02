@@ -18,14 +18,14 @@
     "demands": [
         "xcode"
     ],
-    "instanceNameFormat": "Install iOS certificates matching $(certificates)",
+    "instanceNameFormat": "Install iOS certificates matching $(certificate)",
     "inputs": [
         {
             "name": "certificate",
             "type": "secureFile",
             "label": "iOS Certificate (.p12)",
-            "defaultValue": "",
-            "required": true,
+            "defaultValue": "*.p12",
+            "required": false,
             "helpMarkDown": "Install the iOS certificates with name matching the specified value. By default the certificate will be installed into a temporary keychain accessible via the variable `IOS_TEMP_KEYCHAIN` during the build."
         },
         {

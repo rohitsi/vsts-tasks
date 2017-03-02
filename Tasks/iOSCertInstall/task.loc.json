@@ -1,18 +1,19 @@
 {
   "id": "d2eff759-736d-4b7b-8554-7ba0960d49d6",
-  "name": "AppleSigning",
+  "name": "iOSCertInstall",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
   "helpMarkDown": "ms-resource:loc.helpMarkDown",
   "category": "Build",
   "visibility": [
-    "Build"
+    "Build",
+    "Release"
   ],
   "author": "Microsoft Corporation",
   "version": {
     "Major": 0,
-    "Minor": 0,
-    "Patch": 1
+    "Minor": 114,
+    "Patch": 0
   },
   "demands": [
     "xcode"
@@ -20,17 +21,25 @@
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
   "inputs": [
     {
-      "name": "appleConnection",
-      "type": "connectedService:AppleSigning",
-      "label": "ms-resource:loc.input.label.appleConnection",
+      "name": "certificate",
+      "type": "secureFile",
+      "label": "ms-resource:loc.input.label.certificate",
+      "defaultValue": "*.p12",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.certificate"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.password",
       "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "ms-resource:loc.input.help.appleConnection"
+      "required": "true",
+      "helpMarkDown": "ms-resource:loc.input.help.password"
     }
   ],
   "execution": {
     "Node": {
-      "target": "applesigning.js",
+      "target": "ioscertinstall.js",
       "argumentFormat": ""
     }
   }
