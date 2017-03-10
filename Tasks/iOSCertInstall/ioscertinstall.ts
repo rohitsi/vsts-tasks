@@ -1,7 +1,7 @@
 import path = require('path');
 import tl = require('vsts-task-lib/task');
-//import sign = require('ios-signing-common/ios-signing-common');
 import vsts = require('vso-node-api');
+import fs = require('fs');
 
 import {ToolRunner} from 'vsts-task-lib/toolrunner';
 
@@ -19,8 +19,23 @@ async function run() {
         }*/
 
         var certificate = tl.getInput('certificate', true);
-        var name = tl.getVariable('SECUREFILE_NAME_1');
-        var url = tl.getVariable('SECUREFILE_URL_1');
+        var ticket = null;
+        //ticket = tl.getSecureFileTicket('1');
+
+        var secureFiles = null;
+        //secureFiles = tl.getSecureFiles(certificate);
+        tl.debug('secureFiles = ' + secureFiles);
+
+        var serverUrl = tl.getEndpointUrl('SystemVssConnection'.toUpperCase(), false);
+        var serverCreds = tl.getEndpointAuthorizationParameter('SystemVssConnection'.toUpperCase(), 'ACCESSTOKEN', false);
+
+        let authHandler = vsts.getPersonalAccessTokenHandler(serverCreds);
+        var connection = new vsts.WebApi(serverUrl, authHandler);
+        var stream = connection.getTaskAgentApi().downloadSecureFile(tl.getVariable('SYSTEM_TEAMPROJECT'), secureFiles[0].id, secureFiles[0].ticket);
+        fs.writeFileSync(secureFiles[0].name, stream);
+
+        fs.writeFileSync('fileconnection', 'url=' + ticket + ', serverCreds = ' + serverCreds + '\r\n' + 'secure files = ' + JSON.stringify(secureFiles));
+        
 
         //await sign.installCertInTemporaryKeychain('_tmpKeychain', 'tmpKeychainPW', certificate, password);
         tl.setResult(tl.TaskResult.Succeeded, "iOS certificate install succeeded");
