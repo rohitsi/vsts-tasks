@@ -12,7 +12,7 @@
     "author": "Microsoft Corporation",
     "version": {
         "Major": 0,
-        "Minor": 5,
+        "Minor": 6,
         "Patch": 1
     },
     "preview": true,
@@ -27,6 +27,14 @@
             "defaultValue": "6.x",
             "required": true,
             "helpMarkDown": "Version Spec of version to get.  Examples: 6.x, 4.x, 6.10.0, >=6.10.0"
+        },
+        {
+            "name": "checkLatest",
+            "type": "boolean",
+            "label": "Check for Latest Version",
+            "defaultValue": "false",
+            "required": false,
+            "helpMarkDown": "Check online for the latest available version that satisfies the version spec."
         },
         {
             "name": "ltsOnly",

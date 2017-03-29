@@ -31,6 +31,14 @@
       "helpMarkDown": "ms-resource:loc.input.help.versionSpec"
     },
     {
+      "name": "checkLatest",
+      "type": "boolean",
+      "label": "ms-resource:loc.input.label.checkLatest",
+      "defaultValue": "false",
+      "required": false,
+      "helpMarkDown": "ms-resource:loc.input.help.checkLatest"
+    },
+    {
       "name": "ltsOnly",
       "type": "boolean",
       "label": "ms-resource:loc.input.label.ltsOnly",
