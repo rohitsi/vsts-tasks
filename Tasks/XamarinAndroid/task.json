@@ -11,7 +11,7 @@
     "author": "Microsoft Corporation",
     "version": {
         "Major": 1,
-        "Minor": 113,
+        "Minor": 116,
         "Patch": 0
     },
     "demands": [
@@ -209,6 +209,9 @@
     },
     "messages": {
         "UnableToFindMSBuildVersion0Architecture1LookingForLatestVersion": "Unable to find MSBuild: Version = {0}, Architecture = {1}. Looking for the latest version.",
-        "MSBuildNotFoundVersion0Architecture1TryDifferent": "MSBuild not found: Version = {0}, Architecture = {1}. Try a different version/architecture combination, specify a location, or install the appropriate MSBuild version/architecture."
+        "MSBuildNotFoundVersion0Architecture1TryDifferent": "MSBuild not found: Version = {0}, Architecture = {1}. Try a different version/architecture combination, specify a location, or install the appropriate MSBuild version/architecture.",
+        "JDKNotFound": "Failed to find specified JDK version. Please make sure environment variable {0} exists and is set to the location of a corresponding JDK.",
+        "XbuildNotFound": "xbuild was not found in the path.",
+        "NoMatchingProjects": "No matching files were found with search pattern: {0}."
     }
 }
