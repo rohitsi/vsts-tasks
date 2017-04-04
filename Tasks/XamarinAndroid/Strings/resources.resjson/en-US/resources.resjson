@@ -37,5 +37,5 @@
   "loc.messages.MSBuildNotFoundVersion0Architecture1TryDifferent": "MSBuild not found: Version = {0}, Architecture = {1}. Try a different version/architecture combination, specify a location, or install the appropriate MSBuild version/architecture.",
   "loc.messages.JDKNotFound": "Failed to find specified JDK version. Please make sure environment variable {0} exists and is set to the location of a corresponding JDK.",
   "loc.messages.XbuildNotFound": "xbuild was not found in the path.",
-  "loc.messages.NoMatchingProjects": "No matching files were found with search pattern: {0}."
+  "loc.messages.NoMatchingProjects": "No matching files were found with search pattern: %s."
 }

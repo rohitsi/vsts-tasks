@@ -62,7 +62,7 @@ async function run() {
         let filesList: string[] = tl.findMatch(null, project);
 
         // Fail if no matching .csproj files were found
-        if (!filesList || filesList.length == 0) {
+        if (!filesList || filesList.length === 0) {
             throw tl.loc('NoMatchingProjects', project);
         }
 
@@ -84,7 +84,7 @@ async function run() {
         }
 
     } catch (err) {
-        tl.setResult(tl.TaskResult.Failed, err + '\n See https://go.microsoft.com/fwlink/?LinkId=760847');
+        tl.setResult(tl.TaskResult.Failed, err + '. See https://go.microsoft.com/fwlink/?LinkId=760847');
     }
 }
 
